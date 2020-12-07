@@ -66,6 +66,8 @@ namespace WebAppMvc.Controllers
         }
 
         // GET: Movies/Edit/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
