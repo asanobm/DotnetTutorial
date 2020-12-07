@@ -14,6 +14,7 @@ namespace WebAppMvc.Models
         
         [Display(Name = "Release Date")] // Display name change
         [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime ReleaseDate { get; set; }
         [RegularExpression(@"^[A-Z]+[a-zA-Z]*$")]
         [Required]
@@ -22,6 +23,7 @@ namespace WebAppMvc.Models
         
         [Column(TypeName = "decimal(18, 2)")]
         [Range(1,100)]
+        [DataType(DataType.Currency)]
         public decimal Price { get; set; }
         [RegularExpression(@"^[A-Z]+[a-zA-Z0-9""'\s-]*$")]
         [StringLength(5)]
